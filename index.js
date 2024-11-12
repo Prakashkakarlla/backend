@@ -35,7 +35,7 @@ app.post('/send', (req, res) => {
 
     const mailOptions = {
         from: email,
-        to: `${email}`, // replace with the recipient email
+        to: "kakarllaprakash108@gmail.com", // replace with the recipient email
         subject: `Subject ${subject}`,
         text: `Name: ${name}\n\nDescription:\n${description}`,
     };
