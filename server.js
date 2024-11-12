@@ -1,13 +1,13 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors'); // To allow CORS if frontend and backend are on different servers
-
+require('dotenv').config(); // Load environment variables
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+
 
 
 // Enable CORS for requests from your frontend
@@ -24,10 +24,14 @@ app.get('/', (req, res) => {
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'kakarllaprakash108@gmail.com', // replace with your email
-        pass: 'dgmt bfoy xied lniw', // replace with your email password
+        user: process.env.EMAIL_USER, // Use environment variable for email
+        pass: process.env.EMAIL_PASS, // replace with your email password
     },
 });
+
+//user: 'kakarllaprakash108@gmail.com', // replace with your email
+//pass: 'dgmt bfoy xied lniw', // replace with your email password
+
 
 // POST route to handle form submissions
 app.post('/send', (req, res) => {
