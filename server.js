@@ -12,7 +12,7 @@ app.use(cors());
 
 // Enable CORS for requests from your frontend
 app.use(cors({
-    origin: 'http://127.0.0.1:5500', // Allow only your frontend origin
+    origin: 'https://prakashkakarlla.github.io/Prakashkakarlla', // Allow only your frontend origin
 }));
 
 
