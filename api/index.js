@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 
-// This route will serve "Hello World" when the root URL is accessed
+// Define a route that serves "Hello World" at the root URL
 app.get('/', (req, res) => {
     res.status(200).send('Hello World from the main page!');
 });
 
-// Export the app as a module to be used by Vercel
+// Export the app for use in Vercel's serverless environment
 module.exports = app;
