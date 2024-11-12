@@ -37,7 +37,7 @@ app.post('/send', (req, res) => {
         from: email,
         to: "kakarllaprakash108@gmail.com", // replace with the recipient email
         subject: `Subject ${subject}`,
-        text: `Name: ${name}\n\nDescription:\n${description}`,
+        text: `Name: ${name}\nEmail: ${email}\nDescription:\n${description}`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
